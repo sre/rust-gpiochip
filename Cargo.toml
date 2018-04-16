@@ -1,0 +1,9 @@
+[package]
+name = "gpiochip"
+version = "0.1.0"
+authors = ["Sebastian Reichel <sre@ring0.de>"]
+
+[dependencies]
+nix = "0.10.0"
+bitflags = "1.0.1"
+libc = "0.2"
