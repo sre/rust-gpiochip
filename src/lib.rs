@@ -280,6 +280,18 @@ impl GpioEventHandle {
 
         Ok(s)
     }
+
+    /// Flush event buffer
+    pub fn flush(&self) -> io::Result<()> {
+        let mut bitmap = try!(wait_for_event(&[&self], 0));
+
+        while bitmap != 0 {
+            try!(self.read());
+            bitmap = try!(wait_for_event(&[&self], 0));
+        }
+
+        Ok(())
+    }
 }
 
 impl GpioHandle {
