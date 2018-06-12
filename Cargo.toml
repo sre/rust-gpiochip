@@ -1,7 +1,13 @@
 [package]
 name = "gpiochip"
 version = "0.1.0"
+description = "Package to use Linux /dev/gpiochip devices"
 authors = ["Sebastian Reichel <sre@ring0.de>"]
+license = "ISC"
+repository = "https://github.com/sre/rust-gpiochip"
+readme = "README.md"
+keywords = ["gpio", "gpiochip", "linux"]
+categories = ["hardware-support"]
 
 [dependencies]
 nix = "0.10.0"
