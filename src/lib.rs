@@ -292,6 +292,17 @@ impl GpioEventHandle {
 
         Ok(())
     }
+
+    /// Get GPIO value
+    pub fn get(&self) -> io::Result<u8> {
+        let mut data = ioctl::gpiohandle_data { values: [0; 64] };
+
+        try!(from_nix_result(unsafe {
+            ioctl::get_line_values(self.file.as_raw_fd(), &mut data)
+        }));
+
+        Ok(data.values[0])
+    }
 }
 
 impl GpioHandle {
