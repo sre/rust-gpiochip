@@ -1,6 +1,6 @@
 [package]
 name = "gpiochip"
-version = "0.1.0"
+version = "0.1.1"
 description = "Package to use Linux /dev/gpiochip devices"
 authors = ["Sebastian Reichel <sre@ring0.de>"]
 license = "ISC"
