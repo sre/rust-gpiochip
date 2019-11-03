@@ -210,12 +210,12 @@ mod ioctl {
 
     const GPIO_IOC_MAGIC: u8 = 0xB4;
 
-    ioctl! ( read get_chipinfo with GPIO_IOC_MAGIC, 0x01; gpiochip_info );
-    ioctl! ( readwrite get_lineinfo with GPIO_IOC_MAGIC, 0x02; gpioline_info );
-    ioctl! ( readwrite get_linehandle with GPIO_IOC_MAGIC, 0x03; gpiohandle_request );
-    ioctl! ( readwrite get_lineevent with GPIO_IOC_MAGIC, 0x04; gpioevent_request );
-    ioctl! ( readwrite get_line_values with GPIO_IOC_MAGIC, 0x08; gpiohandle_data );
-    ioctl! ( readwrite set_line_values with GPIO_IOC_MAGIC, 0x09; gpiohandle_data );
+    ioctl_read!(get_chipinfo, GPIO_IOC_MAGIC, 0x01, gpiochip_info );
+    ioctl_readwrite!(get_lineinfo, GPIO_IOC_MAGIC, 0x02, gpioline_info );
+    ioctl_readwrite!(get_linehandle, GPIO_IOC_MAGIC, 0x03, gpiohandle_request );
+    ioctl_readwrite!(get_lineevent, GPIO_IOC_MAGIC, 0x04, gpioevent_request );
+    ioctl_readwrite!(get_line_values, GPIO_IOC_MAGIC, 0x08, gpiohandle_data );
+    ioctl_readwrite!(set_line_values, GPIO_IOC_MAGIC, 0x09, gpiohandle_data );
 }
 
 fn from_nix_error(err: ::nix::Error) -> io::Error {

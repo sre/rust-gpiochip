@@ -1,6 +1,6 @@
 [package]
 name = "gpiochip"
-version = "0.1.1"
+version = "0.1.2"
 description = "Package to use Linux /dev/gpiochip devices"
 authors = ["Sebastian Reichel <sre@ring0.de>"]
 license = "ISC"
@@ -10,6 +10,6 @@ keywords = ["gpio", "gpiochip", "linux"]
 categories = ["hardware-support"]
 
 [dependencies]
-nix = "0.10.0"
-bitflags = "1.0.1"
-libc = "0.2"
+nix = "0.15.0"
+bitflags = "1.2.1"
+libc = "0.2.65"
